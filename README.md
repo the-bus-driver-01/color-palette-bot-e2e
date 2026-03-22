@@ -1,0 +1,1 @@
+# color-palette-bot-e2e
