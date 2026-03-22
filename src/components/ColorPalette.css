@@ -22,63 +22,6 @@
   margin-bottom: 1.5rem;
 }
 
-.color-swatch {
-  aspect-ratio: 1;
-  border-radius: 12px;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.2s ease-in-out;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding: 1rem;
-  min-height: 150px;
-}
-
-.color-swatch:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-}
-
-.color-swatch:focus {
-  outline: 3px solid #646cff;
-  outline-offset: 2px;
-}
-
-.color-swatch:active {
-  transform: translateY(-2px);
-}
-
-.color-info {
-  text-align: center;
-  background: rgba(0, 0, 0, 0.1);
-  border-radius: 6px;
-  padding: 0.5rem 0.75rem;
-  backdrop-filter: blur(4px);
-  transition: all 0.2s ease-in-out;
-}
-
-.color-swatch:hover .color-info {
-  background: rgba(0, 0, 0, 0.2);
-  transform: scale(1.05);
-}
-
-.color-hex {
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  margin-bottom: 0.25rem;
-  font-family: 'Monaco', 'Consolas', 'Courier New', monospace;
-}
-
-.color-rgb {
-  font-size: 0.875rem;
-  font-weight: 400;
-  font-family: 'Monaco', 'Consolas', 'Courier New', monospace;
-}
 
 .palette-info {
   text-align: center;
@@ -99,18 +42,6 @@
     gap: 0.75rem;
   }
 
-  .color-swatch {
-    min-height: 120px;
-    padding: 0.75rem;
-  }
-
-  .color-hex {
-    font-size: 0.875rem;
-  }
-
-  .color-rgb {
-    font-size: 0.75rem;
-  }
 }
 
 @media (max-width: 480px) {
@@ -119,18 +50,6 @@
     gap: 0.5rem;
   }
 
-  .color-swatch {
-    min-height: 100px;
-    padding: 0.5rem;
-  }
-
-  .color-hex {
-    font-size: 0.8rem;
-  }
-
-  .color-rgb {
-    font-size: 0.7rem;
-  }
 }
 
 /* Dark mode support */
@@ -144,29 +63,3 @@
   }
 }
 
-/* High contrast mode */
-@media (prefers-contrast: high) {
-  .color-swatch {
-    border: 2px solid #000;
-  }
-
-  .color-info {
-    background: rgba(0, 0, 0, 0.8);
-  }
-}
-
-/* Reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  .color-swatch,
-  .color-info {
-    transition: none;
-  }
-
-  .color-swatch:hover {
-    transform: none;
-  }
-
-  .color-swatch:hover .color-info {
-    transform: none;
-  }
-}

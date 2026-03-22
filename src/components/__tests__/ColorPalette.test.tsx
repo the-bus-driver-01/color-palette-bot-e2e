@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { vi } from 'vitest';
 import { ColorPalette } from '../ColorPalette';
 import { Color } from '../../utils/colorGenerator';
 
