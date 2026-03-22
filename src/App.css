@@ -1,0 +1,206 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.app {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* Header section */
+.app-header {
+  margin-bottom: 1rem;
+}
+
+.app-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #333;
+  line-height: 1.2;
+  background: linear-gradient(135deg, #646cff 0%, #747bff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.app-description {
+  font-size: 1.125rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* Main content */
+.app-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+}
+
+.generate-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.generate-hint {
+  font-size: 1rem;
+  color: #888;
+  margin: 0;
+  font-style: italic;
+  animation: fade-in 0.5s ease-in-out;
+}
+
+.palette-section {
+  width: 100%;
+  animation: slide-up 0.3s ease-out;
+}
+
+/* Footer */
+.app-footer {
+  margin-top: auto;
+  padding-top: 2rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+.footer-text {
+  font-size: 0.875rem;
+  color: #888;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  #root {
+    padding: 1.5rem;
+  }
+
+  .app {
+    gap: 2rem;
+  }
+
+  .app-title {
+    font-size: 2rem;
+  }
+
+  .app-description {
+    font-size: 1rem;
+  }
+
+  .app-main {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #root {
+    padding: 1rem;
+  }
+
+  .app {
+    gap: 1.5rem;
+  }
+
+  .app-title {
+    font-size: 1.75rem;
+  }
+
+  .app-description {
+    font-size: 0.9375rem;
+  }
+
+  .generate-hint {
+    font-size: 0.875rem;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .app-title {
+    color: #fff;
+  }
+
+  .app-description {
+    color: #ccc;
+  }
+
+  .generate-hint {
+    color: #aaa;
+  }
+
+  .footer-text {
+    color: #aaa;
+  }
+
+  .app-footer {
+    border-top-color: #444;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .app-title {
+    background: none;
+    -webkit-text-fill-color: initial;
+    color: #000;
+  }
+
+  .app-description,
+  .generate-hint,
+  .footer-text {
+    color: #000;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .app-title,
+    .app-description,
+    .generate-hint,
+    .footer-text {
+      color: #fff;
+    }
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .generate-hint,
+  .palette-section {
+    animation: none;
+  }
+}

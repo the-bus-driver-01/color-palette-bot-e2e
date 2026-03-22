@@ -1,0 +1,210 @@
+.generate-button {
+  /* Base button styles */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  border: none;
+  border-radius: 12px;
+  transition: all 0.2s ease-in-out;
+
+  /* Visual styling */
+  background: linear-gradient(135deg, #646cff 0%, #747bff 100%);
+  color: white;
+  box-shadow: 0 4px 14px 0 rgba(100, 108, 255, 0.3);
+  min-width: 200px;
+  min-height: 56px;
+
+  /* Typography */
+  font-family: inherit;
+  letter-spacing: 0.025em;
+}
+
+.generate-button:hover:not(.disabled):not(.generating) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px 0 rgba(100, 108, 255, 0.4);
+  background: linear-gradient(135deg, #747bff 0%, #646cff 100%);
+}
+
+.generate-button:active:not(.disabled):not(.generating) {
+  transform: translateY(0);
+  box-shadow: 0 4px 14px 0 rgba(100, 108, 255, 0.3);
+}
+
+.generate-button:focus {
+  outline: 3px solid rgba(100, 108, 255, 0.5);
+  outline-offset: 2px;
+}
+
+.generate-button.generating {
+  cursor: default;
+  background: linear-gradient(135deg, #9ca3ff 0%, #a8afff 100%);
+  box-shadow: 0 4px 14px 0 rgba(100, 108, 255, 0.2);
+}
+
+.generate-button.disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  background: #ccc;
+  box-shadow: none;
+}
+
+.button-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  position: relative;
+}
+
+.button-text {
+  font-weight: inherit;
+}
+
+.button-icon,
+.loading-spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+}
+
+.generate-icon,
+.spinner-icon {
+  width: 100%;
+  height: 100%;
+  color: currentColor;
+}
+
+/* Loading spinner animation */
+.loading-spinner {
+  animation: spin 1s linear infinite;
+}
+
+.spinner-icon circle {
+  animation: spinner-dash 1.5s ease-in-out infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinner-dash {
+  0% {
+    stroke-dasharray: 1, 150;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -124;
+  }
+}
+
+/* Screen reader only content */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .generate-button {
+    padding: 0.875rem 1.75rem;
+    font-size: 1rem;
+    min-width: 180px;
+    min-height: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .generate-button {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9375rem;
+    min-width: 160px;
+    min-height: 48px;
+  }
+
+  .button-content {
+    gap: 0.5rem;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .generate-button {
+    box-shadow: 0 4px 14px 0 rgba(100, 108, 255, 0.4);
+  }
+
+  .generate-button:hover:not(.disabled):not(.generating) {
+    box-shadow: 0 8px 25px 0 rgba(100, 108, 255, 0.5);
+  }
+
+  .generate-button.generating {
+    box-shadow: 0 4px 14px 0 rgba(100, 108, 255, 0.3);
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .generate-button {
+    border: 2px solid #000;
+    background: #0000ff;
+  }
+
+  .generate-button:hover:not(.disabled):not(.generating) {
+    background: #0033ff;
+  }
+
+  .generate-button:focus {
+    outline: 3px solid #ffff00;
+  }
+
+  .generate-button.disabled {
+    background: #666;
+    color: #ccc;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .generate-button {
+    transition: none;
+  }
+
+  .generate-button:hover:not(.disabled):not(.generating) {
+    transform: none;
+  }
+
+  .loading-spinner {
+    animation: none;
+  }
+
+  .spinner-icon circle {
+    animation: none;
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -35;
+  }
+}
